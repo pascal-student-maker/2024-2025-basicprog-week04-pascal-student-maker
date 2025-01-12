@@ -1,10 +1,21 @@
 #exercise 14
-def give_common_elements(list1,list2):
-    for x in list1:
-        for y in list2:
-            if x ==y:
-                result = "at least list1 and list2 element in common"
-                return result
-            print(result)
-print(f" common elements: {give_common_elements([78,4,5,6,4],[89,78,4])}")
-print(f" common elements: {give_common_elements(['Tamara', 'Delfien', 'Elke', 'Marijn'],['Natasja', 'Mieke', 'Tamara', 'Elke', 'Carine'])}")         
+def give_common_elements(list1:list,list2:list) -> list:
+    common_elements = []
+    for element in list1:
+        if element in list2:
+            common_elements.append(element)
+            common_elements.sort()
+            common_elements = list(set(common_elements))
+            
+    return common_elements
+
+list1 = [78, 4, 5, 6, 4]
+list2 = [89, 78, 4]  
+List3 =  ['Tamara', 'Delfien', 'Elke', 'Marijn']
+List4 = ['Natasja', 'Mieke', 'Tamara', 'Elke', 'Carine']
+
+print(f" the common elements are {give_common_elements(list1,list2)}") 
+print(f" the common elements are {give_common_elements(List3,List4)}")   
+  
+   
+           
