@@ -1,15 +1,20 @@
-# getal1 = int(input("Geef het minimum op:> "))
-# getal2 = int(input("Geef het maximum op:> "))
-# print(f"De vijf geselecteerde getallen hiertussen zijn: {kies_5_getallen(getal1, getal2)}")
+#ex17 oplossing
 
-def choose_5_numbers(min,max):
-    return list(a,b,c,d,e) (min,max)
-   
-list1 = ["a", "b", "c", "d", "e",]
-a = int(input("Enter a number:> "))
-b = int(input("Enter a number:> "))
-c = int(input("Enter a number:> "))
-d = int(input("Enter a number:> "))
-e = int(input("Enter a number:> "))
-print(f"The five selected numbers in between are: {choose_5_numbers(a, b,c,d,e)}")
+import random
 
+def choose_5_numbers(min_value, max_value):
+  new_list = random.sample(range(min_value,max_value+1),5)
+  return new_list
+
+
+min_value = int(input("Enter the minimum:"))
+max_value = int(input('Enter the maximum:'))
+
+
+if max_value - min_value+ 1 < 5:
+  print(" range is to little for 5 numbers:")
+else:
+  print(f" The five selected numbers in between are:  {choose_5_numbers(min_value,max_value)}")  
+  
+  
+  
