@@ -1,17 +1,22 @@
-#exercise 3b
-friends = [] 
-a = str(input("Enter a friends name , or exit with an empty field:>"))
-friends.append(a)
-
-b = str(input("Enter a friends name , or exit with an empty field:>"))
-friends.append(b)
-
-c= str(input("Enter a friends name , or exit with an empty field:>"))
-friends.append(c)
-
-d = str(input("Enter a friends name , or exit with an empty field:>"))
-friends.append(d)
-
-print(f" Your friends are : {friends}")
+def create_new_friends() -> list[str]:
+    friends = []
+    
+    while True:
+        name = str(input(" Enter a friend's name, or exit with an empty field:>")).strip()
+        if name == "":
+            break
+        
+        friends.append(name)
+        
+    return friends 
 
 
+
+friends = create_new_friends() 
+print(f" Your friends are {friends}")  
+
+
+        
+            
+            
+      
