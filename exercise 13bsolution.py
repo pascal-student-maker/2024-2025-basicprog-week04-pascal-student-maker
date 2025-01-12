@@ -1,20 +1,20 @@
-def counts_elements_within_interval(list1, min, max):
-    c = 0
-    for x in list1:
-        if min <= x <= max:
-            c += 1
-    return c
+def count_elements_within_interval(collection:list,minimum,maximum)-> int:
+    count = 0
+    for element in collection:
+        if minimum <= element <= maximum:
+          count+= 1
+    return count
+List1 =  [10, 20, 30, 40, 40, 40, 70, 80, 99]     
+List2 =  ['a', 'b', 'c', 'd', 'e', 'f']   
+minimum = input("Enter a minimum:")
+maximum = input("Enter a maximum:")
 
-# Usage:
-list1 = [10, 20, 30, 40, 50, 40, 40, 60, 70,80,99]
-list2 = ['a', 'b', 'c', 'd', 'e', 'f']
+if minimum.isdigit() and maximum.isdigit():
+    minimum = int(minimum)
+    maximum = int(maximum)
+    print(f"The number of elements between {minimum} and {maximum} is: {count_elements_within_interval(List1, minimum, maximum)}")
+elif minimum.isalpha() and maximum.isalpha():
+    minimum = str(minimum)
+    maximum = str(maximum)
+    print(f"The number of elements between {minimum} and {maximum} is: {count_elements_within_interval(List2, minimum, maximum)}")
 
-# Case 1: Numeric Range
-min = 40
-max = 80
-print(f"The number of elements between 40 and 80 : {counts_elements_within_interval(list1,min,max)}")  # Output: 4
-
-# Case 2: Alphabetic Range (Corrected)
-min = 'a'
-max = 'e'
-print(f"The number of elements between a and e : {counts_elements_within_interval(list2,min,max)}" ) # Output: 4
