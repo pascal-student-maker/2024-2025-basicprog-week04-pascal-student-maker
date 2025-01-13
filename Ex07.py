@@ -2,7 +2,7 @@ def get_info_list(name:str,collection:list) -> str:
     result = f"{name} \n"
     for i in range(len(collection)):
         result += f" {collection[i]} is on position{i}\n"
-        return result
+    return result
     
     
 collection1 = [12, 45, -9, -15]
