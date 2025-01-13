@@ -1,60 +1,47 @@
+type_of_car_a = []
+type_of_car_b = []
+type_of_car_c = []
+days_car_a = []
+days_car_b = []
+days_car_c = []
+number_of_kilometers_car_a = []
+number_of_kilometers_car_b = []
+number_of_kilometers_car_c = []
+def rental_company(type_of_car:str,days_car:int,number_of_kilometers:float):
+    if type_of_car =="A":
+        days_car_a.append(days_car)
+        number_of_kilometers_car_a.append(number_of_kilometers)
+    elif type_of_car =="B":
+        days_car_b.append(days_car)
+        number_of_kilometers_car_b.append(number_of_kilometers)     
 
-
-
-#ex 18 solutin 
-
-kilometers_carA = []
-kilometers_carB = []
-kilometers_carC= []
-x= "km"
-carAcost =  0.5
-carBcost =   0.6
-carCcost =   0.7
-
-while True:
-    car_type = input("Specify the type of Car (A: Car A, B: Car B, C: Car C): ")
-    if car_type.upper() not in ['A', 'B', 'C']:
-        print("Invalid employee type. Please enter A, B, or C.")
-        continue
-
-    days = int(input("Enter the days: "))
-
-    if days_type.upper() == 'A':
-        days_type.append(days)
-    elif days_type.upper() == 'B':
-        days_type.append(days)
+    elif type_of_car == "C":
+        days_car_c.append(days_car)
+        number_of_kilometers_car_c.append(number_of_kilometers)
     else:
-        days_type.append(days)
+        return ValueError(" Wrong type of car try again")
+    
+number_of_cars = int(input(" Enter  Number of cars rented:"))
 
-    more_days = input("Do you want to enter another day? (yes/no): ")
-    if more_days.lower() != 'yes':
-        break
-
-# Calculate totals and print results
-total_revenue_CarA = total_days_carA + carAcost * kilometers_carA + 25
-total_revenue_CarB = total_days_carB + carBcost * kilometers_carB + 35
-total_revenue_CarC = total_days_carC + carCcost * kilometers_carC + 45
-total_days_carA = len(days_type)
-total_days_carB = len(days_type)
-total_days_carC = len(days_type)
-total_days = total_days_carA + total_days_carB + total_days_carC
-
-total_car_cost = sum(carAcost) + sum(carBcost) + sum(carCcost)
-total_car_kilometers = sum(kilometers_carA ) + sum(kilometers_carB ) + sum(kilometers_carC)
-total_revenue = sum(total_revenue_CarA) + sum(total_revenue_CarB) + sum(total_revenue_CarC)
-
-print("Total days:", total_days)
-print("Total car cost:", total_car_cost)
-print("Total Kilometers:", total_car_kilometers)
-print("Total revenue :", total_revenu)
-print("Total days car a :", total_days_carA)
-print("Total days car b :", total_days_carB)
-print("Total days car c :", total_days_carC)
-print(" Total kilometers car a:", kilometers_carA)
-print("Total kilometers car b:", kilometers_carB)
-print("Total kilometers car c:", kilometers_carC)
-print("Total revenue car a:",total_revenue_CarA)
-print("Total revenue car b:", total_revenue_CarB)
-print("Total revenue car c:", total_revenue_CarC)
+for _ in range(number_of_cars):
+    type_of_car = input("Enter the  type of car you have rented:")
+    days_car = int(input('Enter the amount of days you have driven the car:'))
+    number_of_kilometers = float(input("Enter the number of kilometers you have driven:"))
+    rental_company(type_of_car,days_car,number_of_kilometers)
 
 
+revenue_a = sum(days_car_a) * 25 + sum(number_of_kilometers_car_a) * 0.5
+revenue_b = sum(days_car_b) * 35 + sum(number_of_kilometers_car_b) * 0.6
+revenue_c = sum(days_car_c) * 45 + sum(number_of_kilometers_car_c) * 0.7
+total_revenue = revenue_a + revenue_b + revenue_c
+
+print(f" The total number of kilometers driven with car a: {sum(number_of_kilometers_car_a)} ")
+print(f" The total number of kilometers driven with car b: {sum(number_of_kilometers_car_b)} ")   
+print(f" The total number of kilometers driven with car c: {sum(number_of_kilometers_car_c)} ")  
+print(f" The  total days driven with car a: {len(days_car_a)} ") 
+print(f" The total days driven with car b : {len(days_car_b)} ") 
+print(f" The total days driven with car c: {len(days_car_c)}")
+print(f" Revenue of car a : euro {revenue_a} ")
+print(f" Revenue of car b : euro {revenue_b} ")
+print(f" Revenue of car c : euro  {revenue_c} ")
+print(f" Total revenue:  euro {total_revenue:.2f} ")
